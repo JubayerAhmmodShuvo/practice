@@ -1,0 +1,31 @@
+a{
+  color: rgb(172, 39, 39)!important;
+}
+.navbar-toggler-icon{
+  overflow: hidden;
+  
+  padding: 0;
+  border: 0;
+  margin:auto;
+}
+
+.bor{
+  
+ border-radius: 6px;
+  background-color:white;
+}
+.global-container{
+  
+height: 100%;
+align-items: start;
+justify-content: center;
+display: flex;
+color: rgb(238, 20, 20);
+margin-top: 18vh;
+}
+.login-form{
+  height: 50vh;
+  width: 30vw;
+  background-color: rgb(184, 223, 228);
+  
+}
