@@ -17,6 +17,7 @@ a{
 .global-container{
   
 height: 100%;
+width: auto;
 align-items: start;
 justify-content: center;
 display: flex;
@@ -24,8 +25,8 @@ color: rgb(238, 20, 20);
 margin-top: 18vh;
 }
 .login-form{
-  height: 50vh;
-  width: 30vw;
+  height: 400PX ;
+  width: 30%;
   background-color: rgb(184, 223, 228);
   
 }
