@@ -1,1 +1,1 @@
-console.log('do');
+console.log(5 + 5);
