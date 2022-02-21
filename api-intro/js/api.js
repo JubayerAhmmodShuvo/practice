@@ -19,6 +19,22 @@ function loadPosts() {
         .then(data => console.log(data))
 }
 
+// function displayUser(data) {
+//     //  console.log(data)
+//     const ul = document.getElementById('users');
+//     for (const user of data) {
+//         //  console.log(user.name);
+//         const li = document.createElement('li');
+//         li.innerText = `name :${user.name} , email:${user.email}`;
+//         ul.appendChild(li);
+//     }
+// }
+
 function displayUser(data) {
-    console.log(data)
+    const ul = document.getElementById('users');
+    for (const user of data) {
+        const li = document.createElement('li');
+        li.innerText = `user name: ${user.name} ,             email:${user.email}`;
+        ul.appendChild(li);
+    }
 }
