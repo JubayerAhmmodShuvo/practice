@@ -39,6 +39,7 @@ const displayCountryDetail = country => {
     const countryDiv = document.getElementById('country-detail');
     countryDiv.innerHTML = `
   <h5>${country.name.common}</h5>
-  <p>${country.population}</p><img src="${country.flags.png}" alt="">
+  <p>${country.population}</p>
+  <img src="${country.flags.png}" alt="">
   `;
 }
