@@ -26,7 +26,12 @@
 //     console.log("Inside else");
 // }
 
-function work(x, y = 4) {
-    return x + y;
-}
-console.log(work(32));
+// function work(x, y = 4) {
+//     return x + y;
+// }
+// console.log(work(32));
+// const obj = { a: 1, b: 7, c: 3, length: 2 };
+// console.log(Object.keys(obj).length);
+// const obj1 = { module: 35, video: 2 };
+const getGirlFriend = (name = "chokina") => "name";
+console.log(getGirlFriend());
