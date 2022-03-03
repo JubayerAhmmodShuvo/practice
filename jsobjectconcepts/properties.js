@@ -4,17 +4,19 @@ const bottle = {
     price: 50,
     isClean: true
 };
+
+
 //getting all properties names
 const keys = Object.keys(bottle);
-console.log(keys);
+//console.log(keys);
 //getting all values
 const values = Object.values(bottle);
-console.log(values);
+//console.log(values);
 
 const pairs = Object.entries(bottle);
 console.log(pairs);
-Object.seal(bottle);
+//Object.seal(bottle);
 
 bottle.price = 100;
 delete bottle.isClean;
-console.log(bottle);
+//console.log(bottle);
