@@ -6,5 +6,5 @@ const hood = () => {
     console.log(response);
     if (response === true) {
         alert(`You are in the hood`);
-    } else { 'G DN ' };
-}; <
+    } else { 'G DN' };
+};
