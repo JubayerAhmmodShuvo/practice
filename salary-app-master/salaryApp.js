@@ -223,7 +223,7 @@ const uniquifyNames = function(items) {
     const uniqueNames = {};
 
     return items.map(function(item) {
-        if (uniqueNames[item.name]) {
+        if (uniqueNames[item.name] !== undefined) {
             uniqueNames[item.name] += " ";
             item.name += uniqueNames[item.name];
         } else {

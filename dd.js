@@ -33,5 +33,22 @@
 // const obj = { a: 1, b: 7, c: 3, length: 2 };
 // console.log(Object.keys(obj).length);
 // const obj1 = { module: 35, video: 2 };
-const getGirlFriend = (name = "chokina") => "name";
-console.log(getGirlFriend());
+// const getGirlFriend = (name = "chokina") => "name";
+// console.log(getGirlFriend());
+// const marks = 60;
+// const resubmit = -5;
+// console.log(!(marks > 0 || resubmit > 0));
+// const person = { name: "hero", id: 101, address: "BD", postalCode: 40321 };
+// //console.log(Object.length(person).keys);
+// //console.log(Object.keys.length);
+// console.log(Object.keys(person).length);
+// const animals = ['cat', 'dog', 'rat'];
+// console.log(animals.includes('Cat'));
+// const unique = array => array.indexOf(“21”);
+
+
+// const array = [2, 3, 4, 5, 2];
+// const add = (para1, para2) => para2 + para1;
+// console.log(add('2', 3));
+const colors = { mango: 'green', grapes: 'black', organe: 'yellow' };
+console.log(colors[grapes]);
