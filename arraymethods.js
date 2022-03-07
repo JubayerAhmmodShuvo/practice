@@ -12,15 +12,29 @@ const product = [{
     },
     {
         name: 'watch',
-        price: 3200,
+        price: 1200,
         brand: 'lenovo',
         color: 'yellow',
     },
     {
         name: 'sunglass',
-        price: 3200,
+        price: 2200,
         brand: 'lenovo',
         color: 'gray',
     }
 ];
 const brands = product.map(product => product.brand);
+console.log(brands);
+const price = product.map(product => product.price);
+console.log(price);
+
+product.forEach(product => console.log(product));
+product.forEach(product => {
+    console.log(product.name);
+    console.log(product.price);
+});
+const cheap = product.filter(product => product.price <= 3000);
+console.log(cheap);
+
+const special = product.find(p => p.name.includes('n'));
+console.log(cheap);
