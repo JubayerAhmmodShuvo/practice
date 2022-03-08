@@ -50,5 +50,14 @@
 // const array = [2, 3, 4, 5, 2];
 // const add = (para1, para2) => para2 + para1;
 // console.log(add('2', 3));
-const colors = { mango: 'green', grapes: 'black', organe: 'yellow' };
-console.log(colors[grapes]);
+// const colors = { mango: 'green', grapes: 'black', organe: 'yellow' };
+// console.log(colors[grapes]);
+// const person = { name: 'Babe' };
+// console.log(person[name]);
+// const adventurer = { name: 'Alice', cat: { name: 'Lucy' } };
+// const ratName = adventurer ? .rat ? .name;
+// console.log(ratName);
+// let person = null;
+// console.log(person ? person : "person is null");
+const obj = { a: 1 };
+console.log(Object.keys(obj).length === 0);
