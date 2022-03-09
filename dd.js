@@ -59,5 +59,8 @@
 // console.log(ratName);
 // let person = null;
 // console.log(person ? person : "person is null");
-const obj = { a: 1 };
-console.log(Object.keys(obj).length === 0);
+// const obj = { a: 1 };
+// console.log(Object.keys(obj).length === 0);
+const pass = true;
+const gese = !pass ? 'thisis true' : 'this is false';
+console.log(gese);
