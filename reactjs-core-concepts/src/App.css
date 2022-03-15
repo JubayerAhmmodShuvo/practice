@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.asen{
+  background-attachment: fixed;
+  background-color:red;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
