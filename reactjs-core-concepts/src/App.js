@@ -6,19 +6,19 @@ const singer={name:'maha',age:22};
 function App() {
   return (
     <div className="App">
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      <Person name="Rubel" ></Person>
+      <Person name="Tubel"></Person>
+      <Person name="Subel"></Person>
       <Person></Person>
       <Friend></Friend>
       
     </div>
   );
 }
-function Person() {
+function Person(props) {
   return (
     <div className="person">
-      <h1>Sakib  AL Hasan</h1>
+      <h1>{props.name}</h1>
       <p>Profession: Cricketer</p>
     </div>
   )
