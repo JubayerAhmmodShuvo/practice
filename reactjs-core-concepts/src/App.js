@@ -6,27 +6,32 @@ const singer={name:'maha',age:22};
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="asen" >Kire Kemon asos</h1>
-        <p>Name:{333 + number}</p>
-        <p>Name:{singer.name} {singer.age}</p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person></Person>
+      <Person></Person>
+      <Person></Person>
+      <Person></Person>
+      <Friend></Friend>
+      
     </div>
   );
+}
+function Person() {
+  return (
+    <div className="person">
+      <h1>Sakib  AL Hasan</h1>
+      <p>Profession: Cricketer</p>
+    </div>
+  )
+  
+}
+
+function Friend() {
+  return (
+    <div className="asen">
+      <h3>Name : Dulal Chowdhury</h3>
+      <p>Job: maramari</p>
+    </div>
+  )
 }
 
 export default App;
