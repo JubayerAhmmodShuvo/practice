@@ -4,12 +4,16 @@ import './App.css';
 const number = 555;
 const singer={name:'maha',age:22};
 function App() {
+  const nayoks = ['Ruber', 'Bapparaz','Sakib','Jorina','Misir Ali','Anwae']; 
   return (
     <div className="App">
-      <Person name="Rubel" ></Person>
-      <Person name="Tubel"></Person>
-      <Person name="Subel"></Person>
-      <Person></Person>
+      {
+nayoks.map(nayok => <Person name= {nayok}></Person>)
+      }
+      {/* <Person name={nayoks[0]} ></Person>
+      <Person name={nayoks[1]}></Person>
+      <Person name={nayoks[2 ]}></Person> */}
+      
       <Friend></Friend>
       
     </div>
