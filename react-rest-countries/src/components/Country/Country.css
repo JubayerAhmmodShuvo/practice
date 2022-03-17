@@ -1,6 +1,12 @@
 .country{
-  background-color: rgb(214, 163, 21);
-  border: 2px solid rgb(221, 3, 3);
+  background-color: rgba(210, 213, 21, 0.397);
+  border: 2px solid rgb(19, 188, 211);
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 5px;
+}
+.country img{
+  width: 95%;
+  height: 50%;
+  border-radius: 5px;
+  margin-top: 5px;
 }
