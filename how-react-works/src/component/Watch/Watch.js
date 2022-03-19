@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Watch = () => {
   const [steps, setSteps] = useState(0);
@@ -6,6 +6,9 @@ const Watch = () => {
     setSteps(steps + 1);
 
   };
+  useEffect(() => { 
+    console.log(steps);
+  },[steps])
   return (
     <div>
       <h2>This is my Smartwastch</h2>
