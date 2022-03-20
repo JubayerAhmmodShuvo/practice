@@ -27,4 +27,24 @@ const addToDb = id => {
   
 }
 
-export { addToDb };
+const removeFromDb = id => {
+  let shoppingCart = {};
+  const storedCart = localStorage.getItem('shoppingCart');
+  if (storedCart) {
+    shoppingCart = JSON.parse(storedCart);
+  } else {
+    shoppingCart = {};
+  }
+  const quantity = shoppingCart[id];
+  if (quantity) {
+    const newQuantity = quantity - 1;
+    if (newQuantity === 0) {
+      delete shoppingCart[id];
+    } else {
+      shoppingCart[id] = newQuantity;
+    }
+  }
+  localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+}
+
+export { addToDb ,removeFromDb};
