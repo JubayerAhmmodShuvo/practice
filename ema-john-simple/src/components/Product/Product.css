@@ -36,7 +36,14 @@ margin-top: 5px;
   border:none;
   position: absolute;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .button-cart:hover{
   background-color: orange;
+}
+.button-cart .button-text{  
+  margin-right: 5px;
+
 }
