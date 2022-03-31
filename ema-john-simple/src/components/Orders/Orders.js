@@ -3,6 +3,7 @@ import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
+import { Link } from 'react-router-dom';
 
 const Orders = () => {
   const [products, setProducts] = useProducts();
@@ -25,20 +26,14 @@ const Orders = () => {
       <div className="cart-container">
 
 
-<Cart cart={cart} />
+        <Cart cart={cart}>
 
-
-
-
-
-
-
-
-
-
-
-
-
+          <Link to="/inventory" >
+            <button>Prceed Checkout</button>
+          </Link>
+        </Cart>
+        
+ 
 
       </div>
   </div>
