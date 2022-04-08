@@ -14,6 +14,7 @@ function App() {
   const [password, setPassword] = useState('');
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState('');
+  const [registered, setRegistered] = useState(false);
 
   const handleEmailBlur = (e) => {
     setEmail(e.target.value);
@@ -50,7 +51,10 @@ function App() {
     })
 
     e.preventDefault();
-}
+  }
+  const handleRegister = (e) => { 
+    setRegistered(e.target.checked);
+  }
   
 
 
@@ -62,7 +66,7 @@ function App() {
     <div className="">
 
       <div className="registration w-50 mx-auto">
-        <h2 className="m-4 text-primary">Registration</h2>
+        <h2 className="m-4 text-primary">{ registered ?'Login': 'Register' }</h2>
         <Form noValidate validated={validated} onSubmit={ handleFormSubmit} >
   <Form.Group className="mb-3 " controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
@@ -82,11 +86,14 @@ function App() {
               Please provide a valid password.
             </Form.Control.Feedback>
           </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Check onChange={handleRegister} type="checkbox" label="I agree to the terms and conditions" required />
+          </Form.Group>
           
           <p className="text-danger">{ error}</p>
 
   <Button variant="primary" type="submit">
-    Submit
+            { registered ? 'Login': 'Register' }
   </Button>
 </Form>
   </div>
