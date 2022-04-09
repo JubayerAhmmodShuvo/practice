@@ -3,7 +3,7 @@ import React from 'react';
 const Order = () => {
   return (
     <div>
-      <h3>This is order</h3>
+    <h1>This is orfer</h1>
     </div>
   );
 };
