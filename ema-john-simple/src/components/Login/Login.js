@@ -3,6 +3,7 @@ import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { Navigate, useLocation } from "react-router";
 
 const Login = () => {
   const [email, setEmail] = useState(" ");
@@ -11,9 +12,13 @@ const Login = () => {
  const [signInWithEmailAndPassword, user, loading, error] =
    useSignInWithEmailAndPassword(auth);  
   const navigate = useNavigate();
+  const location = useLocation();
+
+  
+  const from = location.state?.from?.pathname || '/';
 
   if (user) {
-    navigate('/shop');
+    navigate(from, { replace: true });
   }
 
 

@@ -28,7 +28,7 @@ const Orders = () => {
 
         <Cart cart={cart}>
 
-          <Link to="/inventory" >
+          <Link to="/shipment" >
             <button>Prceed Checkout</button>
           </Link>
         </Cart>
