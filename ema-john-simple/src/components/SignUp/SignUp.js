@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from '../../firebase.init';
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate=useNavigate();
+
+  const [createUserWithEmailAndPassword,user] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleEmailBlur = event => { 
     setEmail(event.target.value);
@@ -17,20 +23,29 @@ const SignUp = () => {
   const handleConfirmPasswordBlur = event => {
     setConfirmPassword(event.target.value);
   }
-  const handeCreateUser = event => {
+  if (user) { 
+navigate('/shop');
+  }
+  const handleCreateUser = event => {
     event.preventDefault();
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
-    } else { 
-
     }
+    if(password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+    createUserWithEmailAndPassword(email, password);
+  
+
+    
   }
   return (
     <div className="form-container">
       <div className="">
         <h3 className="form-title">SignUp</h3>
-        <form onSubmit={handleCreateUder} >
+        <form onSubmit={handleCreateUser} >
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
@@ -50,12 +65,12 @@ const SignUp = () => {
             <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm password" id="" required />
           </div>
           <p style={{color:"red"}} >{ error}</p>
-          <input className="form-submit" type="submit" value="Login" />
+          <input className="form-submit" type="submit" value="SignUp" />
         </form>
         <p>
           Already Have an Account?{" "}
           <Link className="form-link" to="/login">
-            Create One
+            Login
           </Link>{" "}
         </p>
       </div>
