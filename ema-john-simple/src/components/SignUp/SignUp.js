@@ -38,7 +38,9 @@ navigate('/shop');
     }
     createUserWithEmailAndPassword(email, password);
   
-
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
     
   }
   return (
