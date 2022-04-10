@@ -1,0 +1,27 @@
+.services-container{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 1rem;
+}
+.service-title{
+  font-size:1.5rem;
+  font-weight:bold;
+  text-align:center;
+  margin-bottom:1rem;
+  color: rgb(11, 141, 98);
+}
+
+
+@media screen and (max-width: 768px) {
+  .services-container{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  
+}
+@media screen and (max-width: 576px) {
+  .services-container{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+  
