@@ -19,7 +19,7 @@
 
 .input-group label{
   display: block;
-  margin-bottom: 10px;
+  margin-top: 10px;
   
 }
 .input-group input{
@@ -39,6 +39,7 @@
   border:none;
   font-size: 24px;
   margin-top: 15px;
+  cursor: pointer;
 }
 .form-link{
   text-decoration: none;
