@@ -9,19 +9,29 @@ import ServiceDetail from './Pages/Home/Services/ServiceDetail';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import CheckOut from './Pages/CheckOut/CheckOut';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
-    <div >
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<Home></Home>} />
         <Route path="/home" element={<Home></Home>} />
         <Route path="/service/:serviceId" element={<ServiceDetail />} />
-        <Route path="/about" element={<About></About>} ></Route>
-        <Route path="/login" element={<Login />} ></Route>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />} />
-        <Route path="*" element={<NotFound />} ></Route>
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <CheckOut></CheckOut>
+            </RequireAuth>
+          }
+        />
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </div>
