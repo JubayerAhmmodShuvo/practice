@@ -1,15 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({ service }) => {
-  const { name,img, description, price } = service;
+  const { id, name, img, description, price } = service;
+  const navigate=useNavigate();
+  const handlenavigateToServiceDetail = id => { 
+    navigate(`/service/${id}`);
+  }
   return (
-    <div className="service" >
-      <img src={ img} alt="" />
+    <div className="service">
+      <img src={img} alt="" />
       <h2>{name}</h2>
       <h6>{price}</h6>
       <p>{description}</p>
-      <button>Book: { name}</button>
+      <button onClick={()=>handlenavigateToServiceDetail(id)}>Book: {name}</button>
     </div>
   );
 };
