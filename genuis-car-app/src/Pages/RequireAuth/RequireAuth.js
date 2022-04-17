@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 
 const RequireAuth = ({ children }) => {
   const [user] = useAuthState(auth);
-  const location=useLocation();
+  const location=useLocation(); 
   if (!user) {
     return <Navigate to="/login" stare={{from: location}} replace />;
   }
