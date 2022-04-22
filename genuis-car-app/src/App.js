@@ -11,6 +11,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import AddService from './Pages/AddService/AddService';
 
 function App() {
   return (
@@ -31,6 +32,15 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/addservice"
+          element={
+            <RequireAuth>
+              <AddService></AddService>
+            </RequireAuth>
+          }
+        />
+       
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
