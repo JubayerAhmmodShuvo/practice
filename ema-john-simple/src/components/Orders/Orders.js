@@ -9,7 +9,7 @@ const Orders = () => {
   const [products, setProducts] = useProducts();
   const [cart, setCart] = useCart(products);
   const handleRemoveProduct = product => {
-    setCart(cart.filter(item => item.id !== product.id));
+    setCart(cart.filter(item => item._id !== product._id));
   
   }
   return (
@@ -17,7 +17,7 @@ const Orders = () => {
       <div className="review-item-containe">
         {
           cart.map(product => <ReviewItem
-            key={product.id}
+            key={product._id}
             product={product}
             handleRemoveProduct={handleRemoveProduct}
           />)
