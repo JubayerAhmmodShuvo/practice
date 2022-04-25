@@ -12,6 +12,7 @@ import Register from './Pages/Register/Register';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import AddService from './Pages/AddService/AddService';
+import Order from './Pages/Order/Order';
 
 function App() {
   return (
@@ -37,6 +38,14 @@ function App() {
           element={
             <RequireAuth>
               <AddService></AddService>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <RequireAuth>
+              <Order></Order>
             </RequireAuth>
           }
         />

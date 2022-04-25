@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import useServiceDetail from '../hooks/UseServiceDetail';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
+import axios from 'axios';
 
 const CheckOut = () => {
   const { serviceId } = useParams();
@@ -35,6 +36,15 @@ const CheckOut = () => {
       phone: e.target.phone.value,
       email:user.email
     }
+    axios.post('http://localhost:5000/order', order)
+      .then(res => { 
+        const { data } = res;
+        if (data.inserted) {
+          alert('Your order has been added successfully', { type: 'success' });
+          
+        }
+        e.target.reset();
+      })
 
   }
   return (

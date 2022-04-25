@@ -4,6 +4,7 @@ import {Form,Button } from "react-bootstrap";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
+import axios from 'axios';
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -15,16 +16,19 @@ const Login = () => {
 
   let from = location.state ? location.state.from : { pathname: "/" };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async e => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const {data}=await axios.post('http://localhost:5000/login',{email});
+    localStorage.setItem('user',(data.accessToken));
+    navigate(from, { replace: true });
   }
   if (user) {
-    navigate(from , {replace: true});
+    //navigate(from , {replace: true});
   }
   const navigateRegister = (e) => {
     navigate('/register');
