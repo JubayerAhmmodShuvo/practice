@@ -25,7 +25,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />} />
         <Route
-          path="/checkout"
+          path="/checkout/:serviceId"
           element={
             <RequireAuth>
               <CheckOut></CheckOut>
@@ -40,7 +40,7 @@ function App() {
             </RequireAuth>
           }
         />
-       
+
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
