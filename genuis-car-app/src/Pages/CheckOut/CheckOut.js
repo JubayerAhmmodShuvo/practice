@@ -36,7 +36,7 @@ const CheckOut = () => {
       phone: e.target.phone.value,
       email:user.email
     }
-    axios.post('http://localhost:5000/order', order)
+    axios.post('https://mighty-refuge-60882.herokuapp.com/order', order)
       .then(res => { 
         const { data } = res;
         if (data.inserted) {
