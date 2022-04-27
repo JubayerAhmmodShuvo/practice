@@ -59,6 +59,10 @@ async function run() {
       res.send({ accessToken });
 
     })
+
+    app.get('/shuvo', (req, res) => {
+      res.send('shuvo');
+    })
     
     app.get('/service', async (req, res) => { 
       const query = {};
