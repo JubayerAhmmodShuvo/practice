@@ -4,6 +4,7 @@ import Banner from '../Home/Banner';
 import Info from './Info';
 import MakeAppointment from './MakeAppointment';
 import Services from './Services';
+import Testimonials from './Testimonials';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Info />
       <Services />
       <MakeAppointment />
+      <Testimonials />
     </>
   );
 };
