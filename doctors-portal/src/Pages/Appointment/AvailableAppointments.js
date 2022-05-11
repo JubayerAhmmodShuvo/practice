@@ -8,9 +8,9 @@ const AvailableAppointments = ({ date }) => {
   const[treatment, setTreatment] = useState(null);
 
   useEffect(() => { 
-    fetch('services.json')
-      .then(response => response.json())
-      .then(data => setServices(data));
+    fetch("http://localhost:5000/service")
+      .then((response) => response.json())
+      .then((data) => setServices(data));
   },[])
   return (
     <div>
@@ -26,7 +26,11 @@ const AvailableAppointments = ({ date }) => {
             )
         }
       </div>
-      {treatment && <BookingModal treatment={ treatment} ></BookingModal>}
+      {treatment && <BookingModal
+        date={date}
+        treatment={treatment}
+        setTreatment={setTreatment} 
+      ></BookingModal>}
     </div>
   );
 };
