@@ -11,7 +11,7 @@ const Footer = () => {
       }}
       className=" "
     >
-      <div className="footer p-10">
+      <div className="footer p-10 mt-28 ">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>
