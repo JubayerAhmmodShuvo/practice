@@ -4,15 +4,29 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const BookingModal = ({ date, treatment, setTreatment }) => {
-  const { name, slots } = treatment;
-   const [user, loading, error] = useAuthState(auth);
+  const { _id,name, slots } = treatment;
+  const [user, loading, error] = useAuthState(auth);
+   const formattedDate = format(date, "PP");
 
   const handleBooking = (e) => {
     e.preventDefault();
     const slot = e.target.slot.value;
-    console.log(slot);
+    //console.log(slot);
     setTreatment(null);
+
+   
+
+    const booking = {
+      treatmentId: _id,
+      treatmentName: name,
+      date: formattedDate,
+      slot,
+      patient: user.email,
+      patientName: user.displayName,
+      phone:e.target.phone.value
+    };
   };
+
   return (
     <div className="">
       <input type="checkbox" id="booking-modal" class="modal-toggle" />
