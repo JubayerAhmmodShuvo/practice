@@ -15,7 +15,7 @@ const Service = ({ service, setTreatment }) => {
             )}
           </p>
           <p>
-            P{slots.length} {slots.length > 1 ? "spaces" : "space"} available
+            {slots.length} {slots.length > 1 ? "spaces" : "space"} available
           </p>
           <div class="card-actions justify-center">
            
