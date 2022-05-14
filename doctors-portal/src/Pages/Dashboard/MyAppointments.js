@@ -28,9 +28,9 @@ const MyAppointments = () => {
             </tr>
           </thead>
           <tbody>
-            {appointments.map((a) => (
+            {appointments.map((a,index) => (
               <tr>
-                <th>1</th>
+                <th>{index+1}</th>
                 <td>{a.patientName}</td>
                 <td>{a.date}</td>
                 <td>{a.slot}</td>
