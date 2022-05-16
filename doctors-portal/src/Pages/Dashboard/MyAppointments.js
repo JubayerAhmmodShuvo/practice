@@ -8,36 +8,33 @@ const MyAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/booking?patient=${user.email}`, {
         method: "GET",
         headers: {
-          "authorization":`Bearer ${localStorage.getItem('accessToken')}` ,
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
-
       })
-        .then((response) => {
-          console.log(response);
-          if (response.status === 401 || response.status === 403) {
+        .then((res) => {
+          console.log("res", res);
+          if (res.status === 401 || res.status === 403) {
             signOut(auth);
-            localStorage.removeItem('accessToken');
-            navigate('/');
+            localStorage.removeItem("accessToken");
+            navigate("/");
           }
-
-          
-         return response.json()
+          return res.json();
         })
         .then((data) => {
-          
-          setAppointments(data)
+          setAppointments(data);
         });
-   }
+    }
+  }, [user]);
 
-  },[user])
   return (
     <div>
-      <h1>My Appointments : {appointments.length}</h1>
+      <h2>My Appointments: {appointments.length}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>
@@ -46,13 +43,13 @@ const MyAppointments = () => {
               <th>Name</th>
               <th>Date</th>
               <th>Time</th>
-              <th>TreatMent</th>
+              <th>Treatment</th>
             </tr>
           </thead>
           <tbody>
-            {appointments.map((a,index) => (
+            {appointments.map((a, index) => (
               <tr>
-                <th>{index+1}</th>
+                <th>{index + 1}</th>
                 <td>{a.patientName}</td>
                 <td>{a.date}</td>
                 <td>{a.slot}</td>
@@ -65,5 +62,4 @@ const MyAppointments = () => {
     </div>
   );
 };
-
 export default MyAppointments;
