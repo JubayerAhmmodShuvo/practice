@@ -27,7 +27,7 @@ const BookingModal = ({ date, treatment, setTreatment,refetch }) => {
       phone:e.target.phone.value
     };
 
-    fetch("http://localhost:5000/booking", {
+    fetch("https://shielded-depths-78424.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
