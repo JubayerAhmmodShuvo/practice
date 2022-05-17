@@ -3,15 +3,15 @@ import React from "react";
 const Review = ({ review }) => {
   return (
     <div className='mx-14 my-10'>
-      <div class="card w-full bg-base-100  shadow-xl">
-        <div class="card-body">
+      <div className="card w-full bg-base-100  shadow-xl">
+        <div className="card-body">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa nemo
             amet repudiandae necessitatibus officiis ad?
           </p>
           <div className="flex items-center my-6">
-            <div class="avatar">
-              <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-6 ">
+            <div className="avatar">
+              <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-6 ">
                 <img src={review.img} alt="" />
               </div>
             </div>
