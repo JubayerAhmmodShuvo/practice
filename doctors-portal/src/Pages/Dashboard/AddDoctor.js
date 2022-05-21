@@ -13,7 +13,7 @@ const AddDoctor = () => {
   } = useForm();
 
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/service").then((res) => res.json())
+    fetch("https://shielded-depths-78424.herokuapp.com/service").then((res) => res.json())
   );
 
   const imageStorageKey = "878ec43880b4ddcd339fa93f564048a3";
@@ -46,7 +46,7 @@ const AddDoctor = () => {
             img: img,
           };
           // send to your database
-          fetch("http://localhost:5000/doctor", {
+          fetch("https://shielded-depths-78424.herokuapp.com/doctor", {
             method: "POST",
             headers: {
               "content-type": "application/json",
