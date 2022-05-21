@@ -3,13 +3,13 @@ import React from 'react';
 
 const InfoCard = ({ img,cardTitle,bgClass}) => {
   return (
-    <div class={`card lg:card-side bg-base-100 shadow-xl py-5 ${bgClass} `}>
+    <div className={`card lg:card-side bg-base-100 shadow-xl ${bgClass}`}>
       <figure className="pl-5 pt-5">
         <img src={img} alt="Album" />
       </figure>
-      <div className="card-body text-white text-center  ">
-        <h2 className="card-title  my-2 mx-auto ">{cardTitle}</h2>
-        <h3 className="mx-auto">Click the button to listen on Spotiwhy app.</h3>
+      <div className="card-body text-white">
+        <h2 className="card-title">{cardTitle}</h2>
+        <p>Click the button to listen on Spotiwhy app.</p>
       </div>
     </div>
   );
